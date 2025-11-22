@@ -2,8 +2,6 @@
 
 **Goal**: Build nanoGPT/nanochat from scratch with continual learning capability
 
-**Philosophy**: Top-down, modular, measurement-driven, bleeding-edge SOTA, hacker mentality
-
 **Timeline**: 12 weeks base (compressible to 8, extendable to 16+)
 
 ---
@@ -35,14 +33,6 @@
 8. **Tool use early**: Week 4, not Week 8 (early integration crucial)
 9. **Paper reading tiers**: Critical path (implement) + Context (notes)
 10. **Open-ended ceiling**: Week 13+ research tracks (HTM, JEPA, MoE, 50-paper analysis)
-
-### Core Philosophy
-
-> **"Never watch a lecture without pausing to code the thing being explained."**
->
-> **"Every paper → implement one key trick in your model immediately."**
->
-> **"Measure everything: perplexity, win-rate, throughput, forgetting curves."**
 
 ---
 
@@ -1379,7 +1369,6 @@ scores = (query @ key.T) / math.sqrt(d_k)  # Scale by √d_k
 scores = scores.masked_fill(mask == 0, float('-inf'))  # Causal mask
 attn = F.softmax(scores, dim=-1)
 ```
-```
 
 ---
 
@@ -1785,87 +1774,30 @@ If extended to Week 16: **50 papers analyzed**
 
 ---
 
-### Personal Growth
-
-**Hacker mentality achieved:**
-- [ ] Can build, not just consume (implement papers, not just read)
-- [ ] Comfortable with uncertainty (debug unknown errors, explore)
-- [ ] Ownership of full stack (model → training → deployment)
-- [ ] Public portfolio (GitHub, blog, Twitter updates)
-- [ ] Contributions (opened issues, PRs to open-source projects)
-
-**Karpathy/Krizhevsky-level skills:**
-- [ ] Can train models from scratch (not just finetune)
-- [ ] Understand every line of code (no black boxes)
-- [ ] Can explain to others (teach what you learned)
-- [ ] Built real artifacts (deployed model, not just Jupyter notebook)
-
 ---
 
 ## SUCCESS CRITERIA
 
-**You have successfully completed the challenge if:**
+**Completed when:**
 
-1. ✅ **Technical mastery**: Implemented transformer, trained models, understood continual learning
-2. ✅ **Artifacts**: Deployed nanochat with continual learning capability
-3. ✅ **Knowledge**: Can explain core concepts without notes, debugged 100+ errors
-4. ✅ **Portfolio**: GitHub repo with clean code, blog posts, public visibility
-5. ✅ **Papers**: Read 25+ papers (or 50+ if extended), implemented 15+ core ideas
-6. ✅ **Mindset**: Hacker mentality (build-first, iterate, share openly)
+1. Technical mastery: Implemented transformer, trained models, understood continual learning
+2. Artifacts: Deployed nanochat with continual learning capability
+3. Knowledge: Can explain core concepts without notes, debugged 100+ errors
+4. Portfolio: GitHub repo with clean code, blog posts, public visibility
+5. Papers: Read 25+ papers (or 50+ if extended), implemented 15+ core ideas
 
 **Next steps after Day 100:**
 - Scale up (3B-7B models, full MoE)
 - Contribute to open-source (HuggingFace, PyTorch, Karpathy's repos)
 - Publish findings (arXiv paper, blog post series, video tutorials)
-- Interview for ML roles (you have portfolio now)
 - Start new project (multimodal, agents, robotics)
 - Explore alternative architectures (HTM, JEPA, hybrid systems)
 
 ---
 
-## CLOSING THOUGHTS
-
-**This plan is your map, not your prison.**
-
-You can compress, extend, pivot, pause. What matters:
-1. **Build every week** (not just read)
-2. **Measure everything** (metrics don't lie)
-3. **Never waste time on fluff** (only learn what you'll use)
-4. **Reflect weekly** (pivot when needed)
-5. **Finish with ownership** (Karpathy/Krizhevsky-level understanding)
-
-**Your nanochat with continual learning will be:**
-- Small (560M-1B params)
-- Never forgets (EWC + rehearsal + LoRA-per-task)
-- Uses tools (calculator, search, Python REPL)
-- Learns forever (nested LoRA, adapter stacking)
-- Production-ready (Docker, API, UI)
-- Bleeding-edge (MLA, GRPO, 2025 SOTA)
-
-**You will emerge with:**
-- Karpathy/Krizhevsky-level ownership
-- 25-50 papers internalized
-- Portfolio of working models
-- Continual learning expertise (research frontier)
-- Production ML engineering skills
-- Foundation to explore HTM, JEPA, or scale to billions
-
----
-
-**"The best way to learn is to build."** - Andrej Karpathy
-
-You're not just learning about transformers. You're building them from scratch, understanding every matrix multiply, every gradient, every design decision.
-
-By Day 100, you'll have something real that **YOU** created. That's powerful.
-
-**Now go build.**
-
----
-
 **Last Updated**: 2025-11-22
-**Version**: 2.0 (Ultimate Synthesis)
+**Version**: 2.0
 **Duration**: 12 weeks base (8-16 weeks flexible)
 **Final Goal**: nanoGPT with continual learning from scratch
-**Philosophy**: Top-down, modular, measurement-driven, hacker mentality
 
 ---

@@ -4,15 +4,11 @@
 
 **Duration**: 12 weeks (flexible: 8-16 weeks)
 
-**Philosophy**: Top-down, modular, measurement-driven, bleeding-edge SOTA, hacker mentality
-
 ---
 
 ## What Is This?
 
-This is a **personal 100-day challenge** to master modern AI/ML by building from first principles. The goal is not to memorize theory or chase credentials, but to **build real systems from scratch** and deeply understand how they work.
-
-**Inspiration**: Andrej Karpathy, Alex Krizhevsky - builders who contribute through code and share knowledge openly.
+Personal 100-day challenge to master modern AI/ML by building from first principles. Build real systems from scratch and understand internals deeply.
 
 ---
 
@@ -24,14 +20,6 @@ This is a **personal 100-day challenge** to master modern AI/ML by building from
 - **Never forgets** (EWC + rehearsal + LoRA-per-task)
 - **Uses tools** (calculator, search, Python REPL) for facts
 - **Learns forever** (nested LoRA, adapter stacking)
-
-### Philosophy
-
-> **"Never watch a lecture without pausing to code the thing being explained."**
->
-> **"Every paper → implement one key trick in your model immediately."**
->
-> **"Measure everything: perplexity, win-rate, throughput, forgetting curves."**
 
 **Design Principles:**
 1. **Top-down with safety**: Start from nanochat goal, recurse to fundamentals
@@ -254,25 +242,12 @@ chase-karpathy/
 
 ---
 
-## Why This Challenge?
+## Goals
 
-**Not Yann LeCun or Geoffrey Hinton**
-(Academia, corporate ceremony, theory-first)
-
-**But Karpathy or Krizhevsky**
-(Build first, share openly, hacker mentality)
-
-### Goals
-1. **Technical mastery**: Build transformers from scratch
-2. **Continual learning expertise**: Research frontier (my obsession)
-3. **Portfolio**: GitHub + blog + deployed models
-4. **Foundation**: Can now explore HTM, JEPA, MoE, or scale to billions
-
-### Anti-Goals
-- ❌ Memorize proofs (no fluff math)
-- ❌ Chase credentials (no certificates)
-- ❌ Tutorial hell (build, don't just watch)
-- ❌ Fixed timeline (dynamic, flexible plan)
+1. Build transformers from scratch
+2. Continual learning expertise
+3. Portfolio: GitHub + blog + deployed models
+4. Foundation to explore HTM, JEPA, MoE, or scale to billions
 
 ---
 
@@ -288,16 +263,6 @@ chase-karpathy/
 
 ---
 
-## Contact & Following Along
-
-This is a **personal learning journey**, but feel free to:
-- Follow along (check commits for weekly progress)
-- Star the repo (if you find it useful)
-- Open issues (ask questions, suggest improvements)
-- Share your own implementation (let's learn together)
-
-**Philosophy**: Build in public, share openly, help others.
-
 ---
 
 ## License
@@ -306,31 +271,8 @@ MIT License - Feel free to use this plan for your own learning journey.
 
 ---
 
-## Acknowledgments
-
-**Synthesized from:**
-- **Grok 4.1**: Aggressive timeline, SOTA techniques (MLA, GRPO), open-ended hard mode
-- **Gemini**: Top-down recursive descent, code-first philosophy, visual emphasis
-- **ChatGPT**: Evaluation rigor, engineering focus, risk mitigation
-- **Claude**: Comprehensive coverage, paper-to-code pipeline, structured progression
-
-**Inspired by:**
-- Andrej Karpathy (pedagogy, nanoGPT, micrograd, nanochat)
-- Karpathy's "Neural Networks: Zero to Hero" series
-- HuggingFace Smol Training Playbook
-- Thinking Machines "LoRA Without Regret" blog
-- DeepSeek team (MLA, GRPO innovations)
-- Open-source AI/ML community
-
----
-
-**"The best way to learn is to build."** - Andrej Karpathy
-
-**Now go build.**
-
 ---
 
 **Last Updated**: 2025-11-22
-**Version**: 2.0 (Ultimate Synthesis)
+**Version**: 2.0
 **Timeline**: 12 weeks base (8-16 flexible)
-**Philosophy**: Top-down, modular, measurement-driven, hacker mentality
