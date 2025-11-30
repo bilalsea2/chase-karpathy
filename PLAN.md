@@ -1,6 +1,6 @@
 # THE ULTIMATE 100-DAY AI/ML CHALLENGE
 
-**Goal**: Build nanoGPT/nanochat from scratch with continual learning capability
+**Goal**: Build nanochat from scratch with continual learning capability
 
 **Timeline**: 12 weeks base (compressible to 8, extendable to 16+)
 
@@ -947,67 +947,67 @@ Cosine: lr = min_lr + 0.5*(max_lr - min_lr)*(1 + cos(π*step/total_steps))
 ### Tier 1: CRITICAL PATH (Must implement core idea)
 
 **Weeks 1-4: Foundations**
-1. ✅ *Attention Is All You Need* (Vaswani et al., 2017) - Week 1
+1. *Attention Is All You Need* (Vaswani et al., 2017) - Week 1
    - **Focus**: Section 3 (model architecture), scaled dot-product attention, multi-head attention
    - **Implement**: Full transformer block
 
-2. ✅ *RoFormer: Enhanced Transformer with Rotary Position Embedding* (Su et al., 2021) - Week 4
+2. *RoFormer: Enhanced Transformer with Rotary Position Embedding* (Su et al., 2021) - Week 4
    - **Focus**: Section 2-3 (RoPE formulation, complex number representation)
    - **Implement**: RoPE in attention (replace absolute positional encoding)
 
-3. ✅ *GQA: Training Generalized Multi-Query Transformer Models* (Ainslie et al., 2023) - Week 4
+3. *GQA: Training Generalized Multi-Query Transformer Models* (Ainslie et al., 2023) - Week 4
    - **Focus**: Sections 1-3 (grouped KV heads)
    - **Implement**: Modify attention to group K,V heads
 
 **Weeks 5-6: Efficiency & PEFT**
-4. ✅ *Scaling Laws for Neural Language Models* (Kaplan et al., 2020) - Week 5
+4. *Scaling Laws for Neural Language Models* (Kaplan et al., 2020) - Week 5
    - **Focus**: Sections 1-2, 6 (power laws, optimal model size vs data)
    - **Understand**: Loss scales as compute^(-α)
 
-5. ✅ *LoRA: Low-Rank Adaptation of Large Language Models* (Hu et al., 2021) - Week 6
+5. *LoRA: Low-Rank Adaptation of Large Language Models* (Hu et al., 2021) - Week 6
    - **Focus**: Sections 1-4 (low-rank math, where to apply, hyperparameters)
    - **Implement**: LoRA on all linear layers, merging/unmerging
 
-6. ✅ *QLoRA: Efficient Finetuning of Quantized LLMs* (Dettmers et al., 2023) - Week 6
+6. *QLoRA: Efficient Finetuning of Quantized LLMs* (Dettmers et al., 2023) - Week 6
    - **Focus**: 4-bit quantization + LoRA integration
    - **Implement**: Quantize model, train LoRA adapters
 
 **Week 7: Continual Learning**
-7. ✅ *Overcoming catastrophic forgetting in neural networks* (Kirkpatrick et al., 2016) - EWC - Week 7
+7. *Overcoming catastrophic forgetting in neural networks* (Kirkpatrick et al., 2016) - EWC - Week 7
    - **Focus**: Fisher information matrix, quadratic penalty
    - **Implement**: EWC regularization term
 
-8. ✅ *Thinking Machines "LoRA Without Regret"* blog - Week 6-7
+8. *Thinking Machines "LoRA Without Regret"* blog - Week 6-7
    - **Focus**: Practical LoRA hyperparameters (rank, LR, layers)
    - **Apply**: Use their recommendations in your experiments
 
 **Weeks 8-9: SOTA 2025 & Alignment**
-9. ✅ *DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model* - Week 8
+9. *DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model* - Week 8
    - **Focus**: MLA (Multi-Head Latent Attention) architecture
    - **Implement**: Latent KV compression
 
-10. ✅ *FlashAttention-2: Faster Attention with Better Parallelism* (Dao, 2023) - Week 8
+10. *FlashAttention-2: Faster Attention with Better Parallelism* (Dao, 2023) - Week 8
     - **Focus**: Algorithm 1 (tiled attention), IO-aware optimization
     - **Use**: Library implementation, understand why it's fast
 
-11. ✅ *Direct Preference Optimization: Your Language Model is Secretly a Reward Model* (Rafailov et al., 2023) - Week 9
+11. *Direct Preference Optimization: Your Language Model is Secretly a Reward Model* (Rafailov et al., 2023) - Week 9
     - **Focus**: DPO loss derivation, no separate reward model
     - **Implement**: DPO training loop
 
-12. ✅ *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning* - Week 9
+12. *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning* - Week 9
     - **Focus**: GRPO (Group Relative Policy Optimization), group sampling
     - **Implement**: GRPO algorithm
 
 **Weeks 10-11: Tools & Scale**
-13. ✅ *ReAct: Synergizing Reasoning and Acting in Language Models* (Yao et al., 2022) - Week 10
+13. *ReAct: Synergizing Reasoning and Acting in Language Models* (Yao et al., 2022) - Week 10
     - **Focus**: Thought-Action-Observation loop
     - **Implement**: ReAct pattern with calculator/search tools
 
-14. ✅ *Megatron-LM: Training Multi-Billion Parameter Language Models* (Shoeybi et al., 2019) - Week 11
+14. *Megatron-LM: Training Multi-Billion Parameter Language Models* (Shoeybi et al., 2019) - Week 11
     - **Focus**: Model parallelism, pipeline parallelism
     - **Use**: Reference for distributed training
 
-15. ✅ *ZeRO: Memory Optimizations Toward Training Trillion Parameter Models* (Rajbhandari et al., 2020) - Week 11
+15. *ZeRO: Memory Optimizations Toward Training Trillion Parameter Models* (Rajbhandari et al., 2020) - Week 11
     - **Focus**: ZeRO-1, ZeRO-2 (optimizer state sharding, gradient sharding)
     - **Use**: DeepSpeed library
 
@@ -1133,25 +1133,6 @@ Cosine: lr = min_lr + 0.5*(max_lr - min_lr)*(1 + cos(π*step/total_steps))
 - GSM8K (grade school math, 8.5k problems)
 - MMLU (Massive Multitask Language Understanding, 57 tasks)
 - HumanEval (code generation, 164 Python problems)
-
----
-
-### Compute Options
-
-**Local (Recommended for Weeks 1-10):**
-- 1-2 GPUs: RTX 3090 (24GB), RTX 4090 (24GB), A6000 (48GB)
-- Cost: $1500-$4000 (one-time purchase)
-
-**Cloud (For Week 11-12, scaling experiments):**
-- RunPod: $0.39/hr/GPU (RTX 4090), $1.89/hr/GPU (A100)
-- Lambda Labs: $1.10/hr/GPU (A100)
-- Vast.ai: $0.30-$0.80/hr/GPU (spot instances, cheaper but less reliable)
-- Google Colab Pro+: $50/month (limited, good for prototyping)
-
-**Budget estimate:**
-- Weeks 1-10: Local GPU (or Colab Pro, $10/month)
-- Week 11-12: Rent 4-8x A100 for 1-2 days ($300-$500 total)
-- **Total compute budget**: ~$500-$1000 for 12 weeks
 
 ---
 
@@ -1495,51 +1476,7 @@ DECISION: [Proceed as planned / Repeat week / Deep-dive / Catch-up / Compress / 
 
 ---
 
-## FLEXIBILITY MECHANISMS
-
-### Compression Path: 8-Week Fast Track
-
-**For**: If falling behind, losing motivation, or need to finish faster
-
-**Strategy**: Core MVP only, skip all stretch/mega-stretch goals
-
-**Week-by-week compression:**
-- **Week 0+1 → Week 1**: Skip micrograd, go straight to transformer (4 days)
-- **Week 2+3 → Week 2**: Tokenizer + training loop together (5 days)
-- **Week 4 → Week 3**: Modern arch (RoPE, GQA) + simple tool use (5 days)
-- **Week 5+6 → Week 4**: Eval + LoRA (6 days)
-- **Week 7+8 → Week 5**: Continual (EWC + LoRA-per-task) + MLA (skip) (6 days)
-- **Week 9+10 → Week 6**: SFT + simple tool use (skip GRPO, skip Hydra) (5 days)
-- **Week 11+12 → Week 7-8**: Scale to 560M + nanochat integration (8 days)
-
-**Result: 8-week compressed path**
-```
-Week 1: Transformer from scratch (Core only)
-Week 2: Tokenizer + Training loop (Core only)
-Week 3: Modern arch + Tool use (Core only)
-Week 4: Eval + LoRA (Core only)
-Week 5: Continual learning (EWC + LoRA-per-task only)
-Week 6: SFT + Tools (Core only)
-Week 7-8: Scale + Nanochat (Core only)
-```
-
-**What you sacrifice:**
-- No micrograd deep-dive
-- No GRPO/DPO (just SFT)
-- No MLA/MoE (just standard attention + GQA)
-- No Hydra multi-adapter system
-- No distributed training (single GPU only)
-- No research tracks (HTM, JEPA)
-
-**What you keep:**
-- Working transformer from scratch
-- Modern architecture (RoPE, GQA, SwiGLU)
-- LoRA fine-tuning
-- Continual learning (EWC + LoRA-per-task)
-- Simple tool use
-- 560M model + nanochat UI
-
----
+## FLEXIBILITY MECHANISM
 
 ### Extension Path: 16-Week Deep Dive
 
@@ -1745,59 +1682,10 @@ Did I finish Core in <5 days?
 
 If extended to Week 16: **50 papers analyzed**
 
----
-
-### Artifacts (Portfolio)
-
-**Code (GitHub repository):**
-- [ ] Clean, documented codebase (`README`, docstrings, type hints)
-- [ ] Modular structure (easy to extend)
-- [ ] Training logs + metrics dashboard (TensorBoard or wandb)
-- [ ] Model checkpoints (50M, 124M, 560M or 1B)
-- [ ] LoRA adapter library (5+ domains)
-- [ ] Working chat UI (Gradio or FastAPI + React)
-- [ ] Deployment guide (Docker, API, infrastructure)
-- [ ] Testing (unit tests for key functions)
-
-**Documentation:**
-- [ ] README with quick start, architecture diagram
-- [ ] PLAN.md (this document, updated with reflections)
-- [ ] MATH_REFRESHER.md (your personal cheat sheet)
-- [ ] Paper summaries (15+ Tier 1 papers, 2 pages each)
-- [ ] Blog posts (optional: 5-10 posts on key learnings)
-
-**Metrics & Evaluations:**
-- [ ] Evaluation suite code (eval.py, reproducible)
-- [ ] Benchmark results (perplexity, ARC, GSM8K, etc.)
-- [ ] Continual learning curves (forgetting plots)
-- [ ] Ablation studies (LoRA rank, GQA groups, etc.)
 
 ---
 
----
-
-## SUCCESS CRITERIA
-
-**Completed when:**
-
-1. Technical mastery: Implemented transformer, trained models, understood continual learning
-2. Artifacts: Deployed nanochat with continual learning capability
-3. Knowledge: Can explain core concepts without notes, debugged 100+ errors
-4. Portfolio: GitHub repo with clean code, blog posts, public visibility
-5. Papers: Read 25+ papers (or 50+ if extended), implemented 15+ core ideas
-
-**Next steps after Day 100:**
-- Scale up (3B-7B models, full MoE)
-- Contribute to open-source (HuggingFace, PyTorch, Karpathy's repos)
-- Publish findings (arXiv paper, blog post series, video tutorials)
-- Start new project (multimodal, agents, robotics)
-- Explore alternative architectures (HTM, JEPA, hybrid systems)
-
----
-
-**Last Updated**: 2025-11-22
-**Version**: 2.0
-**Duration**: 12 weeks base (8-16 weeks flexible)
-**Final Goal**: nanoGPT with continual learning from scratch
+**Last Updated**: 2025-11-30
+**Version**: 3.0
 
 ---

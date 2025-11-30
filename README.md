@@ -1,8 +1,6 @@
 # Chase Karpathy: 100-Day AI/ML Challenge
 
-**Goal**: Build nanoGPT from scratch with continual learning capability
-
-**Duration**: 12 weeks (flexible: 8-16 weeks)
+**Goal**: Build nanochat from scratch with continual learning capability
 
 ---
 
@@ -15,7 +13,7 @@ Personal 100-day challenge to master modern AI/ML by building from first princip
 ## What I'm Building
 
 ### Final Artifact
-- **nanoGPT/nanochat** with continual learning capability
+- **nanochat** with continual learning capability
 - **Small** (560M-1B params), **fast**, production-ready
 - **Never forgets** (EWC + rehearsal + LoRA-per-task)
 - **Uses tools** (calculator, search, Python REPL) for facts
@@ -34,7 +32,7 @@ Personal 100-day challenge to master modern AI/ML by building from first princip
 
 ---
 
-## The Ultimate 12-Week Plan
+## The Plan
 
 **See [PLAN.md](PLAN.md) for full details.**
 
@@ -145,11 +143,6 @@ Every Sunday (2 hours):
 - SmolTalk, Alpaca (SFT)
 - C4, WikiText, ARC, GSM8K, MMLU (eval)
 
-### Compute
-- **Local**: RTX 3090/4090, A6000 (Weeks 1-10)
-- **Cloud**: RunPod, Lambda, Vast.ai (Week 11-12 for scaling)
-- **Budget**: ~$500-$1000 for 12 weeks
-
 ### Code References (Study, Don't Copy)
 - karpathy/micrograd
 - karpathy/nanoGPT
@@ -160,69 +153,10 @@ Every Sunday (2 hours):
 
 ---
 
-## Success Criteria (Day 100)
-
-### Technical Milestones
-- [ ] Transformer from scratch (no black boxes)
-- [ ] BPE tokenizer working
-- [ ] Training loop with AMP, DDP/FSDP
-- [ ] Modern arch (RoPE, GQA, SwiGLU, RMSNorm)
-- [ ] Evaluation suite (perplexity, ARC, GSM8K)
-- [ ] LoRA implemented & tested
-- [ ] Continual learning (EWC + replay + LoRA-per-task)
-- [ ] MLA or MoE explored
-- [ ] SFT + GRPO/DPO working
-- [ ] Tool use integrated (calculator, search, REPL)
-- [ ] Multi-GPU training successful
-- [ ] Nanochat UI deployed
-
-### Knowledge Mastery
-- [ ] Can derive attention from scratch
-- [ ] Can explain backprop + chain rule with code
-- [ ] Can tune AdamW hyperparameters
-- [ ] Can debug PyTorch shape errors in <5 min
-- [ ] Can explain LoRA, EWC, GRPO deeply
-
-### Artifacts
-- [ ] Clean GitHub repo (code, docs, tests)
-- [ ] Training logs + metrics dashboard
-- [ ] Model checkpoints (50M, 124M, 560M/1B)
-- [ ] LoRA adapter library (5+ domains)
-- [ ] Working chat UI (Docker, API)
-- [ ] Paper summaries (15+ Tier 1 papers)
-
----
-
-## Directory Structure
-
-```
-chase-karpathy/
-├── weeks/
-│   ├── week01-02/     # Autograd & transformer
-│   ├── week03-04/     # Training & modern arch
-│   ├── week05/        # Eval framework
-│   ├── week06/        # LoRA mastery
-│   ├── week07-08/     # Continual learning & SOTA 2025
-│   ├── week09/        # Alignment
-│   ├── week10/        # Integration (Hydra)
-│   ├── week11/        # Scaling
-│   ├── week12/        # Nanochat speedrun
-│   └── week13+/       # Research tracks
-├── projects/          # Weekly projects
-├── papers/            # Research papers + summaries
-├── notes/             # Learning notes + reflections
-├── checkpoints/       # Model checkpoints
-├── PLAN.md           # Detailed 12-week plan (ultimate guide)
-└── README.md         # This file
-```
-
----
-
 ## Progress Tracking
 
-**Start Date**: TBD
+**Start Date**: Dec 1
 **Current Week**: 0 (Planning complete)
-**Status**: Ready to begin
 
 ### Weekly Log
 - **Week 0**: [ ] Math + micrograd
@@ -232,34 +166,13 @@ chase-karpathy/
 - **Week 4**: [ ] Modern arch + tools
 - **Week 5**: [ ] Eval + baseline
 - **Week 6**: [ ] LoRA
-- **Week 7**: [ ] Continual learning ⭐
+- **Week 7**: [ ] Continual learning
 - **Week 8**: [ ] SOTA 2025
 - **Week 9**: [ ] Alignment
 - **Week 10**: [ ] Hydra
 - **Week 11**: [ ] Scaling
 - **Week 12**: [ ] Nanochat
 - **Week 13+**: [ ] Research tracks
-
----
-
-## Goals
-
-1. Build transformers from scratch
-2. Continual learning expertise
-3. Portfolio: GitHub + blog + deployed models
-4. Foundation to explore HTM, JEPA, MoE, or scale to billions
-
----
-
-## After Day 100
-
-**Next steps:**
-- Scale up (3B-7B models, full MoE)
-- Contribute to open-source (HuggingFace, PyTorch, Karpathy repos)
-- Publish findings (arXiv paper, blog series, video tutorials)
-- Interview for ML roles (portfolio ready)
-- Explore alternative architectures (HTM, JEPA, hybrid)
-- Start new project (multimodal, agents, robotics)
 
 ---
 
@@ -273,6 +186,5 @@ MIT License - Feel free to use this plan for your own learning journey.
 
 ---
 
-**Last Updated**: 2025-11-22
-**Version**: 2.0
-**Timeline**: 12 weeks base (8-16 flexible)
+**Last Updated**: 2025-11-30
+**Version**: 3.0
