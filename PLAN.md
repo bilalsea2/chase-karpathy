@@ -107,7 +107,7 @@
 
 ---
 
-### WEEK 0: BOOTCAMP (5-7 days)
+### WEEK 0: (5-7 days)
 
 **Goal**: Foundation - Math + Autograd engine from scratch
 
@@ -246,7 +246,7 @@
 
 **Goal**: Full training pipeline with optimization, logging, checkpointing
 
-#### Core (MVP) - 4 days
+#### Core - 4 days
 - [ ] **Implement training loop**:
   - DataLoader with shuffle + batching
   - AdamW optimizer (torch.optim.AdamW)
