@@ -14,7 +14,7 @@ class Value:
 
     def __add__(self, other):
         other = other if isinstance(other, Value) else Value(other)
-        out = Value(self.data + other.data, (self, other), '+', label=f"{self.label}+{other.label}")
+        out = Value(self.data + other.data, (self, other), '+')
         
         # when _op="+", we pass the grad value of parents to its children
         def _backward():
@@ -56,12 +56,18 @@ class Value:
     def __truediv__(self, other):
         other = other if isinstance(other, Value) else Value(other)
         return self * other**-1
+    
+    def __rtruediv__(self, other):
+        return other * self**-1
 
     def __neg__(self):
         return self * -1
     
     def __sub__(self, other):
         return self + (-other)
+
+    def __rsub__(self, other):
+        return other + (-self)
 
     def tanh(self):
         x = self.data
@@ -70,8 +76,28 @@ class Value:
 
         def _backward():
             # do/dn = 1 - tanh(n)**2 = 1-o**2
-            self.grad = (1 - out.data**2) * out.grad
+            self.grad += (1 - out.data**2) * out.grad
 
+        out._backward = _backward
+        return out
+
+    def sin(self):
+        x = self.data
+        out = Value(math.sin(x), (self,), 'sin')
+
+        def _backward():
+            self.grad += out.grad * math.cos(x)
+
+        out._backward = _backward
+        return out
+
+    def cos(self):
+        x = self.data 
+        out = Value(math.cos(x), (self, ), 'cos')
+        
+        def _backward():
+            self.grad += -math.sin(x) * out.grad
+        
         out._backward = _backward
         return out
 
