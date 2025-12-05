@@ -111,6 +111,15 @@ class Value:
         out._backward = _backward
         return out
 
+    def log(self):
+        out = Value(log(self.data), (self,), 'log')
+
+        def _backward():
+            self.grad += out.grad * (1 / self.data)
+
+        out._backward = _backward
+        return out
+
     def backward(self):   
         self.grad = 1.0
         topo = []
