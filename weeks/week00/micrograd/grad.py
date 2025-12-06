@@ -112,10 +112,19 @@ class Value:
         return out
 
     def log(self):
-        out = Value(log(self.data), (self,), 'log')
+        out = Value(math.log(self.data), (self,), 'log')
 
         def _backward():
             self.grad += out.grad * (1 / self.data)
+
+        out._backward = _backward
+        return out
+
+    def relu(self):
+        out = Value(0 if self.data < 0 else self.data, (self,), 'relu')
+
+        def _backward():
+            self.grad += (out.data > 0) * out.grad
 
         out._backward = _backward
         return out
