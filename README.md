@@ -21,7 +21,7 @@ Personal 100-day challenge to master modern AI/ML by building from first princip
 
 **Design Principles:**
 1. **Top-down with safety**: Start from nanochat goal, recurse to fundamentals
-2. **Modular weeks**: Core (MVP) + Stretch + Mega-stretch
+2. **Modular weeks**: Core + Stretch + Mega-stretch
 3. **Measure everything**: Metrics dashboard from Week 1
 4. **Flexible timeline**: Compress to 8 weeks or extend to 16 weeks
 5. **Weekend protocol**: Formalized reflection + pivot decision tree
@@ -72,12 +72,12 @@ Personal 100-day challenge to master modern AI/ML by building from first princip
 
 ### Modular Week Structure
 Each week has 3 tiers:
-- **Core (MVP)**: MANDATORY (4-6 days) - essential for final goal
+- **Core**: MANDATORY (4-6 days) - essential for final goal
 - **Stretch**: OPTIONAL (2-3 days) - deepens understanding
 - **Mega-stretch**: OPTIONAL (2-3 days) - research-level depth
 
 ### Flexibility Mechanisms
-- **8-week fast path**: Core MVP only, skip stretches
+- **8-week fast path**: Core only, skip stretches
 - **12-week balanced**: Core + most stretches
 - **16-week deep**: Core + all stretches + research tracks
 
@@ -156,10 +156,10 @@ Every Sunday (2 hours):
 ## Progress Tracking
 
 **Start Date**: Dec 1
-**Current Week**: 0 (Planning complete)
+**Current Week**: 0
 
 ### Weekly Log
-- **Week 0**: [ ] Math + micrograd
+- **Week 0**: [x] Math + micrograd
 - **Week 1**: [ ] Transformer
 - **Week 2**: [ ] Tokenization
 - **Week 3**: [ ] Training loop
@@ -186,5 +186,5 @@ MIT License - Feel free to use this plan for your own learning journey.
 
 ---
 
-**Last Updated**: 2025-11-30
-**Version**: 3.0
+**Last Updated**: 2025-12-07
+**Version**: 4.0

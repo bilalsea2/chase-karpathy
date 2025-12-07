@@ -24,7 +24,7 @@
 ## DESIGN PRINCIPLES
 
 1. **Top-down with safety**: Start with nanochat goal, recurse to fundamentals, but build foundations first (Week 0-1)
-2. **Modular weeks**: Each week = **Core (MVP)** + **Stretch** + **Mega-stretch**
+2. **Modular weeks**: Each week = **Core** + **Stretch** + **Mega-stretch**
 3. **Measure everything**: Metrics dashboard from Week 1 (loss, perplexity, throughput, memory)
 4. **Flexible timeline**: Compress to 8 weeks or extend to 16 weeks based on progress
 5. **Weekend protocol**: Formalized reflection + pivot decision tree every Sunday
@@ -97,32 +97,21 @@
 
 ---
 
-## THE ULTIMATE 12-WEEK PLAN
-
-### Compression & Extension Paths
-
-- **8-week fast path**: Core MVP only, skip stretch goals
-- **12-week balanced**: Core + most stretches
-- **16-week deep**: Core + all stretches + mega-stretches + research tracks
-
----
-
 ### WEEK 0: (5-7 days)
 
 **Goal**: Foundation - Math + Autograd engine from scratch
 
-#### Core (MVP) - 4-5 days
-- [ ] Setup: PyTorch + CUDA, git repo, dev environment
+#### Core - 4-5 days
 - [ ] **Math refresher** (see [Math Refresher](#math-refresher) section):
   - Linear algebra: shapes, matmul, broadcasting, SVD intuition
   - Calculus: chain rule, gradients, backprop
   - Optimization: SGD, Adam, AdamW update rules
   - Probability: softmax, cross-entropy, KL divergence
-- [ ] **Micrograd**: Build autograd engine (Karpathy video)
+- [x] **Micrograd**: Build autograd engine (Karpathy video)
   - Value class with \_\_add\_\_, \_\_mul\_\_, etc.
   - Topological sort for backward pass
   - Train tiny MLP on toy dataset
-- [ ] **Deliverable**: `autograd.py` (100 lines), gradient checker, math cheat sheet
+- [x] **Deliverable**: `autograd.py` (100 lines), gradient checker, math cheat sheet
 
 #### Stretch - 2 days
 - [ ] Makemore part 1: Bigram character model
@@ -132,36 +121,12 @@
 #### Mega-stretch - 2 days
 - [ ] Implement BatchNorm from scratch
 - [ ] Numerical stability debugging toolkit
-- [ ] Gradient visualization tool
-
-#### Metrics
-- None yet (foundation week)
+- [x] Gradient visualization tool
 
 #### Resources
 - Karpathy NN:0→Hero Lecture 1 (micrograd)
 - 3Blue1Brown: Linear Algebra + Calculus essentials
 - Matrix Cookbook (reference)
-
-#### Weekend Reflection Template
-```markdown
-# Week 0 Reflection
-
-## Completed
-- [ ] Math refresher (LinAlg, Calc, Optim)
-- [ ] Micrograd working
-- [ ] Gradient checker validates
-
-## What broke?
-[Gradient bugs, shape errors, etc.]
-
-## What clicked?
-[Chain rule in code, autodiff intuition]
-
-## Confidence (1-10): [X]
-
-## Next week adjustment?
-[Proceed / Need more time / Skip stretch]
-```
 
 ---
 
@@ -169,7 +134,7 @@
 
 **Goal**: Build GPT architecture, understand attention deeply
 
-#### Core (MVP) - 4 days
+#### Core - 4 days
 - [ ] **Implement from scratch** (no HuggingFace, pure PyTorch):
   - Scaled dot-product attention
   - Multi-head attention (parallel heads)
@@ -209,7 +174,7 @@
 
 **Goal**: Build BPE tokenizer, create data shards, unblock experiments
 
-#### Core (MVP) - 3 days
+#### Core - 3 days
 - [ ] **Build BPE tokenizer** (Karpathy minbpe or HF tokenizers):
   - Byte-level BPE training
   - Encode/decode roundtrip test
@@ -285,7 +250,7 @@
 
 **Goal**: Upgrade to 2025 architecture (RoPE, GQA, SwiGLU), add simple tool use
 
-#### Core (MVP) - 5 days
+#### Core - 5 days
 - [ ] **Upgrade transformer** (convert GPT-2 → Llama-3 style):
   - RoPE positional embeddings (replace learned/sinusoidal)
   - RMSNorm (replace LayerNorm)
@@ -330,7 +295,7 @@
 
 **Goal**: Build comprehensive eval suite, establish baseline performance
 
-#### Core (MVP) - 4 days
+#### Core - 4 days
 - [ ] **Build evaluation suite** (`eval.py`):
   - Perplexity on multiple datasets (C4, WikiText-2, domain-specific)
   - Simple reasoning: ARC-easy subset (25 questions)
@@ -374,7 +339,7 @@
 
 **Goal**: Master parameter-efficient fine-tuning, foundation for continual learning
 
-#### Core (MVP) - 5 days
+#### Core - 5 days
 - [ ] **Implement LoRA from scratch** (no PEFT library yet):
   - Low-rank matrices A (d×r), B (r×d) where r<<d
   - Apply to ALL linear layers (Attention Q,K,V,O + MLP up,down)
@@ -423,7 +388,7 @@
 
 **Goal**: Implement & compare 3 continual learning strategies, measure forgetting
 
-#### Core (MVP) - 6 days
+#### Core - 6 days
 - [ ] **Implement 3 strategies**:
   1. **Rehearsal buffer**: Store 1k samples from each task, replay during new task training
   2. **EWC (Elastic Weight Consolidation)**: Compute Fisher diagonal, add quadratic penalty
@@ -470,7 +435,7 @@
 
 **Goal**: Implement cutting-edge 2025 techniques, push efficiency frontier
 
-#### Core (MVP) - 5 days
+#### Core - 5 days
 - [ ] **Implement MLA (Multi-Head Latent Attention)** - DeepSeek style:
   - Compress KV heads to latent vectors (low-rank projection)
   - Up-project in attention computation
@@ -522,7 +487,7 @@
 
 **Goal**: Turn base model into aligned chat model using SFT + GRPO
 
-#### Core (MVP) - 5 days
+#### Core - 5 days
 - [ ] **Supervised Fine-Tuning (SFT)**:
   - Chat template format: `<|user|>...<|assistant|>...`
   - Loss masking (don't train on user prompts, only assistant responses)
@@ -563,7 +528,7 @@
 
 **Goal**: Build multi-adapter manager + RAG + tool orchestration
 
-#### Core (MVP) - 6 days
+#### Core - 6 days
 - [ ] **Build "Hydra" model**:
   - Frozen base model (your 124M-560M from Week 5/8)
   - Library of LoRA adapters: math, code, chat, search, medical
@@ -611,7 +576,7 @@
 
 **Goal**: Scale to 560M-1B params, multi-GPU training, 50-100B tokens
 
-#### Core (MVP) - 5 days
+#### Core - 5 days
 - [ ] **Scale model architecture**:
   - 560M-1B parameters (Llama-like config)
   - Example: n_layers=24, n_heads=16, d_model=1024
@@ -662,7 +627,7 @@
 
 **Goal**: Full nanochat speedrun - tokenizer → pretrain → SFT → eval → UI
 
-#### Core (MVP) - 6 days
+#### Core - 6 days
 - [ ] **Full nanochat speedrun**:
   - Use your 124M-560M-1B model from Week 11
   - SFT on chat dataset (if not done in Week 9)
@@ -1325,7 +1290,7 @@ results = {
 # Week X Build Log
 
 ## Completed
-- [ ] Core MVP (yes/no + what specifically)
+- [ ] Core (yes/no + what specifically)
 - [ ] Stretch goals (list which ones, skip which ones)
 - [ ] Code quality (tests written? docs? clean commit history?)
 
@@ -1356,7 +1321,7 @@ attn = F.softmax(scores, dim=-1)
 ### 2. Pivot Decision Tree (20 min)
 
 ```
-Q1: Did I complete Core MVP?
+Q1: Did I complete Core?
   → NO: Why not?
       → Knowledge gap: Add 2-3 days deep-dive (read papers, reimplement)
       → Time misestimate: Repeat week with reduced scope (skip stretch)
@@ -1400,7 +1365,7 @@ DECISION: [Proceed as planned / Repeat week / Deep-dive / Catch-up / Compress / 
 ### 3. Next Week Planning (40 min)
 
 **Read next week's goals carefully:**
-- What is the Core MVP?
+- What is the Core?
 - What are the Stretch goals?
 - Which papers must I read?
 
@@ -1411,7 +1376,7 @@ DECISION: [Proceed as planned / Repeat week / Deep-dive / Catch-up / Compress / 
 - Tools: [e.g., "need to install DeepSpeed"]
 
 **Estimate time per task:**
-- Core MVP: [X] days
+- Core: [X] days
 - Stretch: [Y] days
 - Mega-stretch: [Z] days (optional)
 - Buffer: 1 day for debugging
@@ -1543,7 +1508,7 @@ Week 16: 50-paper analysis + blog publication (research track E)
 
 **Each week has 3 tiers:**
 
-**Core (MVP) - MANDATORY**
+**Core - MANDATORY**
 - 4-6 days of work
 - Essential skills for final goal
 - If you skip this, you'll be blocked later
@@ -1685,7 +1650,7 @@ If extended to Week 16: **50 papers analyzed**
 
 ---
 
-**Last Updated**: 2025-11-30
-**Version**: 3.0
+**Last Updated**: 2025-12-07
+**Version**: 4.0
 
 ---
