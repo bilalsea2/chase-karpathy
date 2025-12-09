@@ -22,13 +22,13 @@ Personal 100-day challenge to master modern AI/ML by building from first princip
 **Design Principles:**
 1. **Top-down with safety**: Start from nanochat goal, recurse to fundamentals
 2. **Modular weeks**: Core + Stretch + Mega-stretch
-3. **Measure everything**: Metrics dashboard from Week 1
-4. **Flexible timeline**: Compress to 8 weeks or extend to 16 weeks
+3. **Measure everything**: Metrics dashboard from Week 2
+4. **Flexible timeline**: Compress to 9 weeks or extend to 17 weeks
 5. **Weekend protocol**: Formalized reflection + pivot decision tree
-6. **SOTA-first**: 2025 techniques (MLA, GRPO, FlashAttention-2) by Week 8
-7. **Continual learning throughout**: Week 6 onward, not just at the end
-8. **Tool use early**: Week 4, not Week 8
-9. **Open-ended ceiling**: Week 13+ research tracks (HTM, JEPA, MoE)
+6. **SOTA-first**: 2025 techniques (MLA, GRPO, FlashAttention-2) by Week 9
+7. **Continual learning throughout**: Week 7 onward, not just at the end
+8. **Tool use early**: Week 5, not Week 9
+9. **Open-ended ceiling**: Week 14+ research tracks (HTM, JEPA, MoE)
 
 ---
 
@@ -38,28 +38,31 @@ Personal 100-day challenge to master modern AI/ML by building from first princip
 
 ### Phase 1: Foundations (Weeks 0-2)
 - **Week 0**: Math refresher + Autograd engine from scratch (micrograd)
-- **Week 1**: Transformer architecture (attention, MLP, residuals)
-- **Week 2**: Tokenization (BPE) + data pipeline
+- **Week 1**: Makemore series (character-level language modeling)
+- **Week 2**: Transformer architecture (attention, MLP, residuals)
 
 ### Phase 2: Training & Modern Architecture (Weeks 3-5)
-- **Week 3**: Training loop (AdamW, AMP, checkpointing)
-- **Week 4**: Modern arch (RoPE, GQA, SwiGLU) + **Tool use basics** ⚠️
-- **Week 5**: Evaluation framework + baseline 124M model
+- **Week 3**: Tokenization (BPE) + data pipeline
+- **Week 4**: Training loop (AdamW, AMP, checkpointing)
+- **Week 5**: Modern arch (RoPE, GQA, SwiGLU) + **Tool use basics** ⚠️
 
-### Phase 3: PEFT & Continual Learning (Weeks 6-7)
-- **Week 6**: LoRA mastery (implement from scratch, QLoRA)
-- **Week 7**: Continual learning core (EWC, replay, LoRA-per-task) ⭐
+### Phase 3: Evaluation & PEFT (Weeks 6-7)
+- **Week 6**: Evaluation framework + baseline 124M model
+- **Week 7**: LoRA mastery (implement from scratch, QLoRA)
 
-### Phase 4: SOTA 2025 & Alignment (Weeks 8-9)
-- **Week 8**: MLA (DeepSeek), FlashAttention-2, MoE
-- **Week 9**: SFT + GRPO/DPO (alignment)
+### Phase 4: Continual Learning & SOTA (Weeks 8-9)
+- **Week 8**: Continual learning core (EWC, replay, LoRA-per-task) ⭐
+- **Week 9**: SOTA 2025 (MLA, FlashAttention-2, MoE)
 
-### Phase 5: Integration & Scale (Weeks 10-12)
-- **Week 10**: Hydra model (multi-adapter + RAG + tools)
-- **Week 11**: Scale to 1B params, multi-GPU (DDP/FSDP)
-- **Week 12**: Nanochat integration (full speedrun + UI)
+### Phase 5: Alignment & Integration (Weeks 10-12)
+- **Week 10**: SFT + GRPO/DPO (alignment)
+- **Week 11**: Hydra model (multi-adapter + RAG + tools)
+- **Week 12**: Scale to 1B params, multi-GPU (DDP/FSDP)
 
-### Phase 6: Research Tracks (Week 13+)
+### Phase 6: Final Assembly (Week 13)
+- **Week 13**: Nanochat integration (full speedrun + UI)
+
+### Phase 7: Research Tracks (Week 14+)
 - **Track A**: Hierarchical Temporal Memory (HTM, Jeff Hawkins)
 - **Track B**: JEPA (Yann LeCun)
 - **Track C**: Advanced continual learning
@@ -77,9 +80,9 @@ Each week has 3 tiers:
 - **Mega-stretch**: OPTIONAL (2-3 days) - research-level depth
 
 ### Flexibility Mechanisms
-- **8-week fast path**: Core only, skip stretches
-- **12-week balanced**: Core + most stretches
-- **16-week deep**: Core + all stretches + research tracks
+- **9-week fast path**: Core only, skip stretches
+- **13-week balanced**: Core + most stretches
+- **17-week deep**: Core + all stretches + research tracks
 
 ### Weekend Reflection Protocol
 Every Sunday (2 hours):
@@ -160,19 +163,20 @@ Every Sunday (2 hours):
 
 ### Weekly Log
 - **Week 0**: [x] Math + micrograd
-- **Week 1**: [ ] Transformer
-- **Week 2**: [ ] Tokenization
-- **Week 3**: [ ] Training loop
-- **Week 4**: [ ] Modern arch + tools
-- **Week 5**: [ ] Eval + baseline
-- **Week 6**: [ ] LoRA
-- **Week 7**: [ ] Continual learning
-- **Week 8**: [ ] SOTA 2025
-- **Week 9**: [ ] Alignment
-- **Week 10**: [ ] Hydra
-- **Week 11**: [ ] Scaling
-- **Week 12**: [ ] Nanochat
-- **Week 13+**: [ ] Research tracks
+- **Week 1**: [ ] Makemore series
+- **Week 2**: [ ] Transformer
+- **Week 3**: [ ] Tokenization
+- **Week 4**: [ ] Training loop
+- **Week 5**: [ ] Modern arch + tools
+- **Week 6**: [ ] Eval + baseline
+- **Week 7**: [ ] LoRA
+- **Week 8**: [ ] Continual learning
+- **Week 9**: [ ] SOTA 2025
+- **Week 10**: [ ] Alignment
+- **Week 11**: [ ] Hydra
+- **Week 12**: [ ] Scaling
+- **Week 13**: [ ] Nanochat
+- **Week 14+**: [ ] Research tracks
 
 ---
 

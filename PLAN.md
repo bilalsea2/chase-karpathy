@@ -2,7 +2,7 @@
 
 **Goal**: Build nanochat from scratch with continual learning capability
 
-**Timeline**: 12 weeks base (compressible to 8, extendable to 16+)
+**Timeline**: 13 weeks base (compressible to 9, extendable to 17+)
 
 ---
 
@@ -10,7 +10,7 @@
 
 1. [Design Principles](#design-principles)
 2. [Hierarchical Dependency Graph](#hierarchical-dependency-graph)
-3. [The Ultimate 12-Week Plan](#the-ultimate-12-week-plan)
+3. [The Ultimate 13-Week Plan](#the-ultimate-13-week-plan)
 4. [Math Refresher](#math-refresher)
 5. [Paper Reading Strategy](#paper-reading-strategy)
 6. [Tools & Resources](#tools--resources)
@@ -25,14 +25,14 @@
 
 1. **Top-down with safety**: Start with nanochat goal, recurse to fundamentals, but build foundations first (Week 0-1)
 2. **Modular weeks**: Each week = **Core** + **Stretch** + **Mega-stretch**
-3. **Measure everything**: Metrics dashboard from Week 1 (loss, perplexity, throughput, memory)
-4. **Flexible timeline**: Compress to 8 weeks or extend to 16 weeks based on progress
+3. **Measure everything**: Metrics dashboard from Week 2 (loss, perplexity, throughput, memory)
+4. **Flexible timeline**: Compress to 9 weeks or extend to 17 weeks based on progress
 5. **Weekend protocol**: Formalized reflection + pivot decision tree every Sunday
-6. **SOTA-first after foundations**: 2025 techniques (MLA, GRPO, FlashAttention-2) by Week 8
-7. **Continual learning throughout**: Not just Weeks 9-10, integrated from Week 6
-8. **Tool use early**: Week 4, not Week 8 (early integration crucial)
+6. **SOTA-first after foundations**: 2025 techniques (MLA, GRPO, FlashAttention-2) by Week 9
+7. **Continual learning throughout**: Not just Weeks 10-11, integrated from Week 7
+8. **Tool use early**: Week 5, not Week 9 (early integration crucial)
 9. **Paper reading tiers**: Critical path (implement) + Context (notes)
-10. **Open-ended ceiling**: Week 13+ research tracks (HTM, JEPA, MoE, 50-paper analysis)
+10. **Open-ended ceiling**: Week 14+ research tracks (HTM, JEPA, MoE, 50-paper analysis)
 
 ---
 
@@ -81,19 +81,20 @@
 ### Critical Path (Dependencies)
 
 - **Week 0**: Math refresher + Autograd (B1) → Foundation
-- **Week 1**: Transformer (A1) ← depends on B1
-- **Week 2**: Tokenization (B3) → Unblocks data experiments
-- **Week 3**: Training loop (B2) + A1 → First real training
-- **Week 4**: Modern arch (A2) + Tool use basics (C3) → 2025-ready
-- **Week 5**: Evaluation (B3) → Measurement infrastructure
-- **Week 6**: LoRA (C1) → PEFT foundation for continual learning
-- **Week 7**: Continual learning core (C2) → Your obsession begins
-- **Week 8**: SOTA 2025 (A3) → MLA, GRPO, cutting-edge
-- **Week 9**: Alignment (C3) → SFT, GRPO, DPO
-- **Week 10**: Integration (C2 + C3) → Hydra model with tools
-- **Week 11**: Scale (B3) → Multi-GPU, 1B params
-- **Week 12**: Nanochat speedrun → Final assembly
-- **Week 13+**: Research tracks (HTM, JEPA, MoE, papers)
+- **Week 1**: Makemore series → Character-level language modeling foundations
+- **Week 2**: Transformer (A1) ← depends on B1 + Week 1
+- **Week 3**: Tokenization (B3) → Unblocks data experiments
+- **Week 4**: Training loop (B2) + A1 → First real training
+- **Week 5**: Modern arch (A2) + Tool use basics (C3) → 2025-ready
+- **Week 6**: Evaluation (B3) → Measurement infrastructure
+- **Week 7**: LoRA (C1) → PEFT foundation for continual learning
+- **Week 8**: Continual learning core (C2) → Your obsession begins
+- **Week 9**: SOTA 2025 (A3) → MLA, GRPO, cutting-edge
+- **Week 10**: Alignment (C3) → SFT, GRPO, DPO
+- **Week 11**: Integration (C2 + C3) → Hydra model with tools
+- **Week 12**: Scale (B3) → Multi-GPU, 1B params
+- **Week 13**: Nanochat speedrun → Final assembly
+- **Week 14+**: Research tracks (HTM, JEPA, MoE, papers)
 
 ---
 
@@ -114,8 +115,6 @@
 - [x] **Deliverable**: `autograd.py` (100 lines), gradient checker, math cheat sheet
 
 #### Stretch - 2 days
-- [ ] Makemore part 1: Bigram character model
-- [ ] Makemore part 2: MLP character predictor
 - [ ] Read: *Attention Is All You Need* (skim)
 
 #### Mega-stretch - 2 days
@@ -130,7 +129,67 @@
 
 ---
 
-### WEEK 1: MINIMAL TRANSFORMER FROM SCRATCH
+### WEEK 1: MAKEMORE SERIES - CHARACTER-LEVEL LANGUAGE MODELING
+
+**Goal**: Master character-level language modeling through progressive complexity, from bigrams to CNNs
+
+#### Core - 5 days
+- [x] **Part 1: Bigram Model**
+  - Implement simple bigram character-level language model
+  - PyTorch Tensors for probability lookup table
+  - Training, sampling, loss computation
+  - Train on names.txt dataset
+- [x] **Part 2: MLP Character Predictor**
+  - Multi-layer perceptron for character prediction
+  - Model training, hyperparameter tuning
+  - Train/dev/test splits
+  - Compare MLP vs bigram performance
+- [ ] **Part 3: Activations & Gradients, BatchNorm**
+  - Diagnose activation/gradient issues in deep MLPs
+  - Implement Batch Normalization from scratch
+  - Understand why BatchNorm helps training
+  - Visualize activation distributions
+- [ ] **Deliverable**: `makemore.py` with all models, training logs, comparison report
+
+#### Stretch - 2 days
+- [ ] **Part 4: Becoming a Backprop Ninja**
+  - Manual backpropagation through 2-layer MLP
+  - Implement backprop without `loss.backward()`
+  - Include BatchNorm and cross-entropy loss gradients
+  - Build strong gradient intuition
+  - Compare manual vs automatic gradients
+
+#### Mega-stretch - 2 days
+- [ ] **Part 5: Building a WaveNet**
+  - Implement CNN architecture (WaveNet-style)
+  - Tree-like structure for deeper networks
+  - Causal convolutions for autoregressive generation
+  - Compare CNN vs MLP vs bigram on same dataset
+- [ ] **Deliverable**: Complete makemore implementation with all 5 architectures
+
+#### Metrics
+- **Training loss** for each model (bigram, MLP, MLP+BatchNorm, CNN)
+- **Sample quality** (generate 20 names, check name-like quality)
+- **Training speed**: steps/sec for each architecture
+- **Model comparison**: Loss curves, convergence speed
+
+#### Papers (Context)
+- *A Neural Probabilistic Language Model* (Bengio et al., 2003) - MLP for language modeling
+- *Batch Normalization: Accelerating Deep Network Training* (Ioffe & Szegedy, 2015) - BatchNorm
+- *WaveNet: A Generative Model for Raw Audio* (van den Oord et al., 2016) - CNN architecture
+
+#### Tools Introduced
+- PyTorch tensors, training loops, train/dev/test splits
+- BatchNorm implementation, gradient debugging
+- Causal convolutions, CNN architectures
+
+#### Resources
+- Karpathy NN:0→Hero - Makemore Parts 1-5
+- [makemore repository](https://github.com/karpathy/makemore)
+
+---
+
+### WEEK 2: MINIMAL TRANSFORMER FROM SCRATCH
 
 **Goal**: Build GPT architecture, understand attention deeply
 
@@ -170,7 +229,7 @@
 
 ---
 
-### WEEK 2: TOKENIZATION & DATA PIPELINE
+### WEEK 3: TOKENIZATION & DATA PIPELINE
 
 **Goal**: Build BPE tokenizer, create data shards, unblock experiments
 
@@ -207,7 +266,7 @@
 
 ---
 
-### WEEK 3: TRAINING LOOP & EFFICIENCY
+### WEEK 4: TRAINING LOOP & EFFICIENCY
 
 **Goal**: Full training pipeline with optimization, logging, checkpointing
 
@@ -246,7 +305,7 @@
 
 ---
 
-### WEEK 4: MODERN ARCHITECTURE + TOOL USE BASICS
+### WEEK 5: MODERN ARCHITECTURE + TOOL USE BASICS
 
 **Goal**: Upgrade to 2025 architecture (RoPE, GQA, SwiGLU), add simple tool use
 
@@ -269,7 +328,7 @@
 - [ ] Read: *RoFormer* (RoPE), *Llama 2* paper
 
 #### Mega-stretch - 2 days
-- [ ] FlashAttention-2 integration (if not done in Week 1)
+- [ ] FlashAttention-2 integration (if not done in Week 2)
 - [ ] Benchmark attention memory (standard vs GQA vs FlashAttn)
 - [ ] Hybrid attention (local + global, Longformer-style)
 
@@ -287,11 +346,11 @@
 #### Tools Introduced
 - ReAct pattern (Reason + Act), safe eval sandbox, function calling basics
 
-**CRITICAL**: Tool use starts here (Week 4), not Week 8. Early integration.
+**CRITICAL**: Tool use starts here (Week 5), not Week 9. Early integration.
 
 ---
 
-### WEEK 5: EVALUATION FRAMEWORK + BASELINE MODEL
+### WEEK 6: EVALUATION FRAMEWORK + BASELINE MODEL
 
 **Goal**: Build comprehensive eval suite, establish baseline performance
 
@@ -335,7 +394,7 @@
 
 ---
 
-### WEEK 6: PEFT MASTERY (LoRA, QLoRA, Foundation for Continual Learning)
+### WEEK 7: PEFT MASTERY (LoRA, QLoRA, Foundation for Continual Learning)
 
 **Goal**: Master parameter-efficient fine-tuning, foundation for continual learning
 
@@ -384,7 +443,7 @@
 
 ---
 
-### WEEK 7: CONTINUAL LEARNING CORE (Your Obsession Begins)
+### WEEK 8: CONTINUAL LEARNING CORE (Your Obsession Begins)
 
 **Goal**: Implement & compare 3 continual learning strategies, measure forgetting
 
@@ -431,7 +490,7 @@
 
 ---
 
-### WEEK 8: SOTA 2025 TECHNIQUES (MLA, FlashAttention-2, MoE)
+### WEEK 9: SOTA 2025 TECHNIQUES (MLA, FlashAttention-2, MoE)
 
 **Goal**: Implement cutting-edge 2025 techniques, push efficiency frontier
 
@@ -483,7 +542,7 @@
 
 ---
 
-### WEEK 9: ALIGNMENT & GRPO (SFT, DPO, GRPO)
+### WEEK 10: ALIGNMENT & GRPO (SFT, DPO, GRPO)
 
 **Goal**: Turn base model into aligned chat model using SFT + GRPO
 
@@ -524,13 +583,13 @@
 
 ---
 
-### WEEK 10: CONTINUAL + TOOLS INTEGRATION (Hydra Model)
+### WEEK 11: CONTINUAL + TOOLS INTEGRATION (Hydra Model)
 
 **Goal**: Build multi-adapter manager + RAG + tool orchestration
 
 #### Core - 6 days
 - [ ] **Build "Hydra" model**:
-  - Frozen base model (your 124M-560M from Week 5/8)
+  - Frozen base model (your 124M-560M from Week 6/9)
   - Library of LoRA adapters: math, code, chat, search, medical
   - Dynamic adapter loading based on prompt classification
   - Adapter router (simple classifier or embedding similarity)
@@ -572,7 +631,7 @@
 
 ---
 
-### WEEK 11: SCALING & DISTRIBUTED TRAINING
+### WEEK 12: SCALING & DISTRIBUTED TRAINING
 
 **Goal**: Scale to 560M-1B params, multi-GPU training, 50-100B tokens
 
@@ -623,14 +682,14 @@
 
 ---
 
-### WEEK 12: NANOCHAT INTEGRATION (Final Assembly)
+### WEEK 13: NANOCHAT INTEGRATION (Final Assembly)
 
 **Goal**: Full nanochat speedrun - tokenizer → pretrain → SFT → eval → UI
 
 #### Core - 6 days
 - [ ] **Full nanochat speedrun**:
-  - Use your 124M-560M-1B model from Week 11
-  - SFT on chat dataset (if not done in Week 9)
+  - Use your 124M-560M-1B model from Week 12
+  - SFT on chat dataset (if not done in Week 10)
   - Build web interface (FastAPI backend + simple UI)
   - Streaming inference with KV cache
   - Deploy locally (Docker container)
@@ -664,7 +723,7 @@
 
 ---
 
-### WEEK 13+: RESEARCH TRACKS (Open-Ended)
+### WEEK 14+: RESEARCH TRACKS (Open-Ended)
 
 Choose one or more tracks based on interest:
 
@@ -911,68 +970,68 @@ Cosine: lr = min_lr + 0.5*(max_lr - min_lr)*(1 + cos(π*step/total_steps))
 
 ### Tier 1: CRITICAL PATH (Must implement core idea)
 
-**Weeks 1-4: Foundations**
-1. *Attention Is All You Need* (Vaswani et al., 2017) - Week 1
+**Weeks 1-5: Foundations**
+1. *Attention Is All You Need* (Vaswani et al., 2017) - Week 2
    - **Focus**: Section 3 (model architecture), scaled dot-product attention, multi-head attention
    - **Implement**: Full transformer block
 
-2. *RoFormer: Enhanced Transformer with Rotary Position Embedding* (Su et al., 2021) - Week 4
+2. *RoFormer: Enhanced Transformer with Rotary Position Embedding* (Su et al., 2021) - Week 5
    - **Focus**: Section 2-3 (RoPE formulation, complex number representation)
    - **Implement**: RoPE in attention (replace absolute positional encoding)
 
-3. *GQA: Training Generalized Multi-Query Transformer Models* (Ainslie et al., 2023) - Week 4
+3. *GQA: Training Generalized Multi-Query Transformer Models* (Ainslie et al., 2023) - Week 5
    - **Focus**: Sections 1-3 (grouped KV heads)
    - **Implement**: Modify attention to group K,V heads
 
-**Weeks 5-6: Efficiency & PEFT**
-4. *Scaling Laws for Neural Language Models* (Kaplan et al., 2020) - Week 5
+**Weeks 6-7: Efficiency & PEFT**
+4. *Scaling Laws for Neural Language Models* (Kaplan et al., 2020) - Week 6
    - **Focus**: Sections 1-2, 6 (power laws, optimal model size vs data)
    - **Understand**: Loss scales as compute^(-α)
 
-5. *LoRA: Low-Rank Adaptation of Large Language Models* (Hu et al., 2021) - Week 6
+5. *LoRA: Low-Rank Adaptation of Large Language Models* (Hu et al., 2021) - Week 7
    - **Focus**: Sections 1-4 (low-rank math, where to apply, hyperparameters)
    - **Implement**: LoRA on all linear layers, merging/unmerging
 
-6. *QLoRA: Efficient Finetuning of Quantized LLMs* (Dettmers et al., 2023) - Week 6
+6. *QLoRA: Efficient Finetuning of Quantized LLMs* (Dettmers et al., 2023) - Week 7
    - **Focus**: 4-bit quantization + LoRA integration
    - **Implement**: Quantize model, train LoRA adapters
 
-**Week 7: Continual Learning**
-7. *Overcoming catastrophic forgetting in neural networks* (Kirkpatrick et al., 2016) - EWC - Week 7
+**Week 8: Continual Learning**
+7. *Overcoming catastrophic forgetting in neural networks* (Kirkpatrick et al., 2016) - EWC - Week 8
    - **Focus**: Fisher information matrix, quadratic penalty
    - **Implement**: EWC regularization term
 
-8. *Thinking Machines "LoRA Without Regret"* blog - Week 6-7
+8. *Thinking Machines "LoRA Without Regret"* blog - Week 7-8
    - **Focus**: Practical LoRA hyperparameters (rank, LR, layers)
    - **Apply**: Use their recommendations in your experiments
 
-**Weeks 8-9: SOTA 2025 & Alignment**
-9. *DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model* - Week 8
+**Weeks 9-10: SOTA 2025 & Alignment**
+9. *DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model* - Week 9
    - **Focus**: MLA (Multi-Head Latent Attention) architecture
    - **Implement**: Latent KV compression
 
-10. *FlashAttention-2: Faster Attention with Better Parallelism* (Dao, 2023) - Week 8
+10. *FlashAttention-2: Faster Attention with Better Parallelism* (Dao, 2023) - Week 9
     - **Focus**: Algorithm 1 (tiled attention), IO-aware optimization
     - **Use**: Library implementation, understand why it's fast
 
-11. *Direct Preference Optimization: Your Language Model is Secretly a Reward Model* (Rafailov et al., 2023) - Week 9
+11. *Direct Preference Optimization: Your Language Model is Secretly a Reward Model* (Rafailov et al., 2023) - Week 10
     - **Focus**: DPO loss derivation, no separate reward model
     - **Implement**: DPO training loop
 
-12. *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning* - Week 9
+12. *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning* - Week 10
     - **Focus**: GRPO (Group Relative Policy Optimization), group sampling
     - **Implement**: GRPO algorithm
 
-**Weeks 10-11: Tools & Scale**
-13. *ReAct: Synergizing Reasoning and Acting in Language Models* (Yao et al., 2022) - Week 10
+**Weeks 11-12: Tools & Scale**
+13. *ReAct: Synergizing Reasoning and Acting in Language Models* (Yao et al., 2022) - Week 11
     - **Focus**: Thought-Action-Observation loop
     - **Implement**: ReAct pattern with calculator/search tools
 
-14. *Megatron-LM: Training Multi-Billion Parameter Language Models* (Shoeybi et al., 2019) - Week 11
+14. *Megatron-LM: Training Multi-Billion Parameter Language Models* (Shoeybi et al., 2019) - Week 12
     - **Focus**: Model parallelism, pipeline parallelism
     - **Use**: Reference for distributed training
 
-15. *ZeRO: Memory Optimizations Toward Training Trillion Parameter Models* (Rajbhandari et al., 2020) - Week 11
+15. *ZeRO: Memory Optimizations Toward Training Trillion Parameter Models* (Rajbhandari et al., 2020) - Week 12
     - **Focus**: ZeRO-1, ZeRO-2 (optimizer state sharding, gradient sharding)
     - **Use**: DeepSpeed library
 
@@ -1176,7 +1235,7 @@ Cosine: lr = min_lr + 0.5*(max_lr - min_lr)*(1 + cos(π*step/total_steps))
 - **Code** (if applicable):
   - HumanEval pass@1 (target: >5% for 1B model)
 
-**Continual Learning Metrics (Week 7+ only):**
+**Continual Learning Metrics (Week 8+ only):**
 - **Forgetting**:
   - Δ perplexity on Task 1 after training Task 2, 3
   - Target: <20% increase (good continual learning)
@@ -1207,13 +1266,13 @@ Cosine: lr = min_lr + 0.5*(max_lr - min_lr)*(1 + cos(π*step/total_steps))
   - GQA: ~50% reduction
   - MLA: ~70% reduction
 
-**Tool Use Metrics (Week 4+ only):**
+**Tool Use Metrics (Week 5+ only):**
 - **Tool call accuracy**: % correct tool invocations (right tool, right args)
 - **Task success rate**: % correct final answers (what matters)
 - **False positive rate**: unnecessary tool calls (hallucinated tool use)
 - **Latency**: overhead from tool invocation (target: <100ms)
 
-**Alignment Metrics (Week 9+ only):**
+**Alignment Metrics (Week 10+ only):**
 - **Win rate**: Pairwise comparison vs baseline (target: >60%)
 - **Helpfulness score**: Human eval on 10 prompts, 1-5 scale (target: >3.5)
 - **Harmlessness score**: Toxicity filter + adversarial prompts (target: <5% toxic)
@@ -1221,7 +1280,7 @@ Cosine: lr = min_lr + 0.5*(max_lr - min_lr)*(1 + cos(π*step/total_steps))
 
 ---
 
-### Evaluation Suite Setup (Week 5)
+### Evaluation Suite Setup (Week 6)
 
 **Build once, reuse forever:**
 
@@ -1450,49 +1509,49 @@ DECISION: [Proceed as planned / Repeat week / Deep-dive / Catch-up / Compress / 
 **Strategy**: Core + All stretch + All mega-stretch + Research tracks
 
 **Additional weeks:**
-- **Week 6.5 (LoRA Deep-Dive)**:
+- **Week 7.5 (LoRA Deep-Dive)**:
   - DoRA, LoHa, LoKr variants
   - LoRA merging strategies (TIES, DARE, weighted sum)
   - Ablation studies (rank, layers, learning rate)
 
-- **Week 8.5 (MoE Mastery)**:
+- **Week 9.5 (MoE Mastery)**:
   - Scale to 16-32 experts (billions of params, sparse)
   - Expert specialization analysis
   - Soft vs hard routing (top-k, softmax, learned routing)
 
-- **Week 10.5 (Advanced RAG)**:
+- **Week 11.5 (Advanced RAG)**:
   - Reranking (cross-encoder)
   - Hybrid search (dense + BM25)
   - Query rewriting (expand user query)
   - Multi-hop retrieval (chain multiple searches)
 
-- **Week 13 (HTM Experiments)**:
+- **Week 14 (HTM Experiments)**:
   - Study Jeff Hawkins' *Thousand Brains Theory*
   - Implement spatial pooler + temporal memory
   - Hybrid HTM + Transformer architecture
 
-- **Week 14 (JEPA Exploration)**:
+- **Week 15 (JEPA Exploration)**:
   - Study Yann LeCun's I-JEPA, V-JEPA
   - Implement JEPA on simple task (masked prediction)
   - Hybrid Transformer + JEPA objective
 
-- **Week 15 (Advanced Continual)**:
+- **Week 16 (Advanced Continual)**:
   - Progressive Neural Networks (lateral connections)
   - Meta-learning for fast adaptation (MAML, Reptile)
   - Lifelong learning benchmarks (CLOC, CTrL)
 
-- **Week 16 (50 Papers + Publication)**:
+- **Week 17 (50 Papers + Publication)**:
   - Complete 50-paper analysis sprint
   - Write comprehensive blog post series (10 posts)
   - Optional: Submit findings to arXiv or blog (build public portfolio)
 
-**Result: 16-week extended path**
+**Result: 17-week extended path**
 ```
-Weeks 1-12: Standard plan (Core + most Stretch)
-Week 13: HTM (research track A)
-Week 14: JEPA (research track B)
-Week 15: Advanced continual learning (research track C)
-Week 16: 50-paper analysis + blog publication (research track E)
+Weeks 1-13: Standard plan (Core + most Stretch)
+Week 14: HTM (research track A)
+Week 15: JEPA (research track B)
+Week 16: Advanced continual learning (research track C)
+Week 17: 50-paper analysis + blog publication (research track E)
 ```
 
 **What you gain:**
@@ -1577,7 +1636,7 @@ Did I finish Core in <5 days?
 
 ## FINAL CHECKLIST
 
-### Technical Milestones (End of Week 12)
+### Technical Milestones (End of Week 13)
 
 **Implementation:**
 - [ ] Transformer from scratch (attention, MLP, residuals, LayerNorm)
@@ -1645,7 +1704,7 @@ Did I finish Core in <5 days?
 
 **Total: 25+ papers read, 15+ core ideas implemented**
 
-If extended to Week 16: **50 papers analyzed**
+If extended to Week 17: **50 papers analyzed**
 
 
 ---

@@ -1,8 +1,6 @@
 # Week 00
 
-## micrograd
-
-## porgress
+## progress
 
 ### day - 1
 
@@ -34,10 +32,16 @@ vibe-coded an interactive 3d visualizer on top of micrograd using threejs. desce
 
 ### day - 6
 
-- started makemore part 1
+< started makemore series, implemented bigram using manual nromalization
+< trained a resnet-18 model based on PlantVillage dataset to detect diseases for hackathon https://tryapollo.vercel.app
 
 ### day - 7
 
+day 7:
+< built bigram using neural nets, implemented nll loss & softmax
+< practiced more pytorch
+
 ## projects
+    - https://tryapollo.vercel.app - plant disease detection model [pytorch]
     - https://vivid-descent.vercel.app - neural nets visualizer [threejs]
     - https://github.com/bilalsea2/cv-gallery - computer vision powered image gallery [mediapipe, nextjs]
