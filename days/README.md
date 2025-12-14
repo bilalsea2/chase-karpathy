@@ -41,7 +41,14 @@ day 7:
 < built bigram using neural nets, implemented nll loss & softmax
 < practiced more pytorch
 
+### day - 8
+
+### day - 9
+
+### day - 10
+
 ## projects
+    first month:
     - https://tryapollo.vercel.app - plant disease detection model [pytorch]
     - https://vivid-descent.vercel.app - neural nets visualizer [threejs]
     - https://github.com/bilalsea2/cv-gallery - computer vision powered image gallery [mediapipe, nextjs]
