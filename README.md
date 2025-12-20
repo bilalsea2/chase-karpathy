@@ -7,6 +7,7 @@
 ## What Is This?
 
 Personal 100-day challenge to master modern AI/ML by building from first principles. Build real systems from scratch and understand internals deeply.
+**Now featuring a deep-dive approach: Exercises + Papers + Implementation.**
 
 ---
 
@@ -21,14 +22,15 @@ Personal 100-day challenge to master modern AI/ML by building from first princip
 
 **Design Principles:**
 1. **Top-down with safety**: Start from nanochat goal, recurse to fundamentals
-2. **Modular weeks**: Core + Stretch + Mega-stretch
-3. **Measure everything**: Metrics dashboard from Week 2
-4. **Flexible timeline**: Compress to 9 weeks or extend to 17 weeks
-5. **Weekend protocol**: Formalized reflection + pivot decision tree
-6. **SOTA-first**: 2025 techniques (MLA, GRPO, FlashAttention-2) by Week 9
-7. **Continual learning throughout**: Week 7 onward, not just at the end
-8. **Tool use early**: Week 5, not Week 9
-9. **Open-ended ceiling**: Week 14+ research tracks (HTM, JEPA, MoE)
+2. **Deep Dive First**: Implementation + Exercises + Papers (no rushing)
+3. **Modular weeks**: Core + Stretch + Mega-stretch
+4. **Measure everything**: Metrics dashboard from Week 4
+5. **Flexible timeline**: 14+ weeks
+6. **Weekend protocol**: Formalized reflection + pivot decision tree
+7. **SOTA-first**: 2025 techniques (MLA, GRPO, FlashAttention-2) by Week 11
+8. **Continual learning throughout**: Week 9 onward
+9. **Tool use early**: Week 7, not Week 11
+10. **Open-ended ceiling**: Week 16+ research tracks
 
 ---
 
@@ -36,159 +38,79 @@ Personal 100-day challenge to master modern AI/ML by building from first princip
 
 **See [PLAN.md](PLAN.md) for full details.**
 
-### Phase 1: Foundations (Weeks 0-2)
-- **Week 0**: Math refresher + Autograd engine from scratch (micrograd)
-- **Week 1**: Makemore series (character-level language modeling)
-- **Week 2**: Transformer architecture (attention, MLP, residuals)
+### Phase 1: Foundations (Weeks 0-2) [COMPLETED]
+- **Weeks 0-2**: Math + Micrograd + Makemore 1-2 (Bigram/MLP) + Bengio Paper.
+- *Deep focus on exercises and manual gradient implementation.*
 
-### Phase 2: Training & Modern Architecture (Weeks 3-5)
-- **Week 3**: Tokenization (BPE) + data pipeline
-- **Week 4**: Training loop (AdamW, AMP, checkpointing)
-- **Week 5**: Modern arch (RoPE, GQA, SwiGLU) + **Tool use basics** ⚠️
+### Phase 2: Mastery & Architecture (Weeks 3-7)
+- **Week 3**: Makemore Mastery (BatchNorm, Backprop, WaveNet)
+- **Week 4**: Transformer Architecture (Attention is All You Need)
+- **Week 5**: Tokenization (BPE) + Data Pipeline
+- **Week 6**: Training Loop & Efficiency
+- **Week 7**: Modern Architecture (Llama-style) + Tool Use
 
-### Phase 3: Evaluation & PEFT (Weeks 6-7)
-- **Week 6**: Evaluation framework + baseline 124M model
-- **Week 7**: LoRA mastery (implement from scratch, QLoRA)
+### Phase 3: Eval & PEFT (Weeks 8-9)
+- **Week 8**: Evaluation Framework
+- **Week 9**: LoRA Mastery & PEFT
 
-### Phase 4: Continual Learning & SOTA (Weeks 8-9)
-- **Week 8**: Continual learning core (EWC, replay, LoRA-per-task) ⭐
-- **Week 9**: SOTA 2025 (MLA, FlashAttention-2, MoE)
+### Phase 4: Continual Learning & SOTA (Weeks 10-11)
+- **Week 10**: Continual Learning Core (EWC, Replay)
+- **Week 11**: SOTA 2025 (MLA, FlashAttention-2, MoE)
 
-### Phase 5: Alignment & Integration (Weeks 10-12)
-- **Week 10**: SFT + GRPO/DPO (alignment)
-- **Week 11**: Hydra model (multi-adapter + RAG + tools)
-- **Week 12**: Scale to 1B params, multi-GPU (DDP/FSDP)
+### Phase 5: Alignment & Integration (Weeks 12-13)
+- **Week 12**: SFT + GRPO/DPO (Alignment)
+- **Week 13**: Hydra Model (Adapters + RAG + Tools)
 
-### Phase 6: Final Assembly (Week 13)
-- **Week 13**: Nanochat integration (full speedrun + UI)
+### Phase 6: Scale & Final Assembly (Weeks 14-15)
+- **Week 14**: Scale to 1B Params (Multi-GPU)
+- **Week 15**: Nanochat Integration
 
-### Phase 7: Research Tracks (Week 14+)
-- **Track A**: Hierarchical Temporal Memory (HTM, Jeff Hawkins)
-- **Track B**: JEPA (Yann LeCun)
-- **Track C**: Advanced continual learning
-- **Track D**: MoE mastery
-- **Track E**: 50 papers deep dive + blog publication
-
----
-
-## Key Features
-
-### Modular Week Structure
-Each week has 3 tiers:
-- **Core**: MANDATORY (4-6 days) - essential for final goal
-- **Stretch**: OPTIONAL (2-3 days) - deepens understanding
-- **Mega-stretch**: OPTIONAL (2-3 days) - research-level depth
-
-### Flexibility Mechanisms
-- **9-week fast path**: Core only, skip stretches
-- **13-week balanced**: Core + most stretches
-- **17-week deep**: Core + all stretches + research tracks
-
-### Weekend Reflection Protocol
-Every Sunday (2 hours):
-1. Build log review (what worked, what broke)
-2. Pivot decision tree (proceed / repeat / compress / extend)
-3. Next week planning (prerequisites, risks, schedule)
-4. Paper queue update
-5. Motivation check (energy, interest, momentum)
-
----
-
-## Math Prerequisites
-
-**Time**: 5-7 days (Week 0)
-
-**Just what's needed, no fluff:**
-- **Linear Algebra**: Shapes, matmul, broadcasting, SVD (for LoRA)
-- **Calculus**: Chain rule, gradients, backprop
-- **Optimization**: SGD, AdamW, LR schedules, gradient clipping
-- **Probability**: Softmax, cross-entropy, KL divergence
-
-**Resources**: 3Blue1Brown (visual), Karpathy micrograd (hands-on)
-
----
-
-## Critical Papers (Tier 1)
-
-**Must implement core idea:**
-1. Attention Is All You Need (Vaswani et al.)
-2. RoFormer (RoPE)
-3. LoRA (Hu et al.)
-4. QLoRA (Dettmers et al.)
-5. EWC (Kirkpatrick et al.)
-6. Thinking Machines "LoRA Without Regret" blog
-7. DeepSeek-V2 (MLA)
-8. FlashAttention-2 (Dao)
-9. DPO (Rafailov et al.)
-10. DeepSeek-R1 (GRPO)
-11. ReAct (Yao et al.)
-12. Megatron-LM / ZeRO
-
-**Total target**: 25+ papers read, 15+ core ideas implemented
-
----
-
-## Tools & Resources
-
-### Core Stack
-- PyTorch 2.0+ (torch.compile, FSDP)
-- HuggingFace (transformers, datasets, PEFT, accelerate)
-- bitsandbytes (quantization)
-- DeepSpeed (ZeRO)
-- FlashAttention-2
-- FAISS (RAG)
-- wandb / TensorBoard
-
-### Data
-- TinyStories (650MB, fast)
-- OpenWebText (15GB)
-- FineWeb-EDU (1.3TB, high-quality)
-- SmolTalk, Alpaca (SFT)
-- C4, WikiText, ARC, GSM8K, MMLU (eval)
-
-### Code References (Study, Don't Copy)
-- karpathy/micrograd
-- karpathy/nanoGPT
-- karpathy/nanochat
-- karpathy/minbpe
-- HuggingFace repos (compare to yours)
-- DeepSeek, Llama, Mixtral repos
+### Phase 7: Research Tracks (Week 16+)
+- **Track A-E**: HTM, JEPA, Advanced CL, MoE, Papers.
 
 ---
 
 ## Progress Tracking
 
 **Start Date**: Dec 1
-**Current Week**: 0
+**Current Phase**: Week 3 (Makemore Mastery)
 
-### Weekly Log
-- **Week 0**: [x] Math + micrograd
-- **Week 1**: [ ] Makemore series
-- **Week 2**: [ ] Transformer
-- **Week 3**: [ ] Tokenization
-- **Week 4**: [ ] Training loop
-- **Week 5**: [ ] Modern arch + tools
-- **Week 6**: [ ] Eval + baseline
-- **Week 7**: [ ] LoRA
-- **Week 8**: [ ] Continual learning
-- **Week 9**: [ ] SOTA 2025
-- **Week 10**: [ ] Alignment
-- **Week 11**: [ ] Hydra
-- **Week 12**: [ ] Scaling
-- **Week 13**: [ ] Nanochat
-- **Week 14+**: [ ] Research tracks
+### Daily Log
+Detailed daily progress is tracked in the `days/` directory.
+- [**days/README.md**](days/README.md) - **GO HERE FOR DAILY UPDATES**
 
----
-
----
-
-## License
-
-MIT License - Feel free to use this plan for your own learning journey.
+### High-Level Milestone Tracker
+- **Weeks 0-2**: [x] Foundations (Micrograd, Makemore 1-2, Exercises)
+- **Week 3**: [ ] Makemore 3-5
+- **Week 4**: [ ] Transformer
+- **Week 5**: [ ] Tokenization
+- **Week 6**: [ ] Training Engine
+- **Week 7**: [ ] Modern Arch
+- **Week 8**: [ ] Evals
+- **Week 9**: [ ] LoRA
+- **Week 10**: [ ] Continual Learning
+- **Week 11**: [ ] SOTA 2025
+- **Week 12**: [ ] Alignment
+- **Week 13**: [ ] Hydra
+- **Week 14**: [ ] Scale
+- **Week 15**: [ ] Nanochat
 
 ---
 
+## Tools & Resources
+
+### Core Stack
+- PyTorch 2.0+
+- HuggingFace (transformers, datasets, PEFT)
+- bitsandbytes
+- DeepSpeed / FlashAttention-2
+- FAISS
+- WandB
+
+### Data
+- TinyStories, OpenWebText, FineWeb-EDU
+
 ---
 
-**Last Updated**: 2025-12-07
-**Version**: 4.0
+**Last Updated**: 2025-12-20
+**Version**: 5.0 - Deep Dive Edition
